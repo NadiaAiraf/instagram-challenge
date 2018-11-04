@@ -3,9 +3,27 @@
 <%= link_to 'delete',  @post,  method: :delete, id: (
   ) %>
 <% end %>
-<%= image_tag @post.image.url(:large) %>
+<%= image_tag @post.image.url(:large), :class => 'individual-image' %>
 <h3><%= @post.messages %></h3>
-<small>Posted by: <%= @post.user.email %></small>
+<small>Posted by: <%= link_to @post.user.email, user_path(@post.user) %></small>
   <div>
   </div>
 </div>
+
+<div class="comments-form">
+  <%= form_with(model: [@post, @post.comment.build], local: true) do |f| %>
+      <%= f.text_area :body, id:"body", required: true %>
+    <div id="submit">
+      <%= f.submit %>
+    </div>
+    <% end %>
+</div>
+  <% @comments.each do |comment| %>
+    <div class="comments">
+      <%= link_to comment.user.email, user_path(comment.user) %>:
+      <%= comment.users_message %> <br>
+      <% if @comment.user != current_user %>
+        <%= link_to 'Delete', "/posts/#{@post.id}/comments/#{comment.id}", method: :delete %>
+      <% end %>
+    </div>
+  <% end %>

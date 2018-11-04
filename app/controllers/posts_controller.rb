@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    @comments = Comment.where(post_id: params[:id])
   end
 
   def index
@@ -28,8 +29,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    
-     posts_url
+     redirect_to posts_url
   end
 
   private

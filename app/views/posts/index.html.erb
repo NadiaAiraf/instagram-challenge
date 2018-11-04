@@ -1,9 +1,12 @@
-<ul class="photos-list">
-<% @posts.each do |post| %>
-    <li class="posts">
-      <a href=<%= "/posts/#{post.id}" %>><%= image_tag post.image.url(:medium), class: 'post-photos' %></a><br>
-      <div class="photo-hover-text">hello
-      </div>
-    </li>
-<% end %>
-</ul>
+
+<main>
+	<% @posts.each do |post| %>
+	    <li class="posts">
+	        <a href=<%= "/posts/#{post.id}" %>><%= image_tag post.image.url(:medium), class: 'post-photos' %></a><br>
+        <div class="links">
+	          <a href=""><i class="fa fa-heart"></i><span></span></a>
+	          <a href=""><i class="fa fa-comment"></i><span></span></a>
+	      </div>
+	    </li>
+	<% end %>
+</main>
