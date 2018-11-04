@@ -10,11 +10,11 @@ I have to admit this hasn't actually been TDD'ed, I know I'll get slammed for it
 
 1. clone this repo
 2. move into the folder and run `bundle install`
-3a. create the databases using `db:create`
-3b. migrate the databases using `bin/rails db:migrate`
-4. start your server with the command `bin/rails s`
-5. visit localhost:3000
-6. sign up for an account
+3. create the databases using `db:create`
+4. migrate the databases using `bin/rails db:migrate`
+5. start your server with the command `bin/rails s`
+6. visit localhost:3000
+7. sign up for an account
 
 ## Current Features
 
