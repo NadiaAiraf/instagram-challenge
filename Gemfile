@@ -31,7 +31,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem "paperclip", "~> 6.0.0"
-
+gem 'pry'
+gem 'launchy'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
