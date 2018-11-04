@@ -1,6 +1,6 @@
-describe 'Posts page' do
-  feature "user can sign up and be logged in" do
-    visit '/users/sign_up'
+RSpec.describe 'Posts page' do
+  it "user can sign up and be logged in" do
+    visit "/"
     fill_in "user_email", with: "test@yahoo.com"
     fill_in "user_password", with: "password"
     fill_in "user_password_confirmation", with: "password"
